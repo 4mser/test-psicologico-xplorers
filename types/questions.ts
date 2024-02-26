@@ -13,7 +13,7 @@ export const questions: Question[] = [
         options: [
             { text: "La capacidad de viajar en el tiempo", points: { "Sabio": 2, "Aventurero": 1 } },
             { text: "Telepatía para entender y comunicarse mejor con las personas", points: { "Conector": 3 } },
-            { text: "Poder hablar con plantas, animales y arboles", points: { "Guardian": 3 } },
+            { text: "Poder hablar con plantas, animales y hongos", points: { "Guardian": 3 } },
             { text: "Invisibilidad para explorar y descubrir secretos sin ser visto", points: { "Creador": 2, "Aventurero": 1 } },
             { text: "Teletransportación para visitar cualquier lugar al instante", points: { "Aventurero": 3 } },
             { text: "Manipulación de la materia para crear cualquier cosa que imagines", points: { "Creador": 3, "Visionario": 1 } },
