@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { questions } from '@/types/questions';
-import { profileMessages } from '@/types/profileMessages';
+import { questions } from '@/types/questions'; // Asegúrate de que la ruta de importación sea correcta
+import { profileMessages } from '@/types/profileMessages'; // Asegúrate de que la ruta de importación sea correcta
 
 export default function Test() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -29,6 +29,12 @@ export default function Test() {
     }
   };
 
+  const goBackToPreviousQuestion = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+  };
+
   const calculateAndShowResults = (finalScores: Record<string, number>) => {
     const sortedProfiles = Object.keys(finalScores).sort((a, b) => finalScores[b] - finalScores[a]);
     const dominantProfile = sortedProfiles[0];
@@ -39,8 +45,8 @@ export default function Test() {
 
   const questionAnimation = {
     hidden: { x: -200, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 0.3 } },
-    exit: { x: 200, opacity: 0, transition: { duration: 0.3 } },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.5 } },
+    exit: { x: 200, opacity: 0, transition: { duration: 0.5 } },
   };
 
   if (loading) {
@@ -48,8 +54,7 @@ export default function Test() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="flex justify-center items-center min-h-[100dvh]"
+        className="flex justify-center items-center max-h-[100dvh]"
       >
         Procesando tu resultado...
       </motion.div>
@@ -61,7 +66,6 @@ export default function Test() {
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.5, opacity: 0 }}
         className="flex flex-col justify-center items-center max-h-[100dvh] p-4"
       >
         <p className="text-lg">{resultMessage}</p>
@@ -92,6 +96,14 @@ export default function Test() {
               {option.text}
             </motion.button>
           ))}
+          {currentQuestionIndex > 0 && (
+            <button
+              className="mt-4 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+              onClick={goBackToPreviousQuestion}
+            >
+              Volver a la pregunta anterior
+            </button>
+          )}
         </motion.div>
       </AnimatePresence>
     </div>
