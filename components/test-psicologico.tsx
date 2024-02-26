@@ -45,8 +45,8 @@ export default function Test() {
 
   const questionAnimation = {
     hidden: { x: -200, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 0.5 } },
-    exit: { x: 200, opacity: 0, transition: { duration: 0.5 } },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.2 } },
+    exit: { x: 200, opacity: 0, transition: { duration: 0.2 } },
   };
 
   if (loading) {
@@ -90,7 +90,7 @@ export default function Test() {
               key={index}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-white bg-blue-500 hover:bg-blue-700 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 w-full"
+              className="text-white border border-amber-500 hover:bg-amber-500 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 w-full"
               onClick={() => handleAnswer(option.points)}
             >
               {option.text}
@@ -98,7 +98,7 @@ export default function Test() {
           ))}
           {currentQuestionIndex > 0 && (
             <button
-              className="mt-4 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+              className="mt-4 bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded"
               onClick={goBackToPreviousQuestion}
             >
               Volver a la pregunta anterior
