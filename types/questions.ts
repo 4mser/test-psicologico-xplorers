@@ -13,7 +13,7 @@ export const questions: Question[] = [
         options: [
             { text: "La capacidad de viajar en el tiempo", points: { "Sabio": 2, "Aventurero": 1 } },
             { text: "Telepatía para entender y comunicarse mejor con las personas", points: { "Conector": 3 } },
-            { text: "Poder regenerar y limpiar el medio ambiente con tus manos", points: { "Guardian": 3 } },
+            { text: "Poder hablar con plantas, animales y arboles", points: { "Guardian": 3 } },
             { text: "Invisibilidad para explorar y descubrir secretos sin ser visto", points: { "Creador": 2, "Aventurero": 1 } },
             { text: "Teletransportación para visitar cualquier lugar al instante", points: { "Aventurero": 3 } },
             { text: "Manipulación de la materia para crear cualquier cosa que imagines", points: { "Creador": 3, "Visionario": 1 } },
@@ -88,7 +88,7 @@ export const questions: Question[] = [
     {
         questionText: "¿Cuál de estas frases resuena más contigo?",
         options: [
-            { text: "Un viaje de mil millas comienza con un solo paso", points: { "Aventurero": 3 } },
+            { text: "No todos los que deambulan están perdidos", points: { "Aventurero": 3 } },
             { text: "Sé el cambio que quieres ver en el mundo", points: { "Guardian": 3 } },
             { text: "La verdadera sabiduría está en saber que no sabes", points: { "Sabio": 3 } },
             { text: "La creatividad es la inteligencia divirtiéndose", points: { "Creador": 3 } },
